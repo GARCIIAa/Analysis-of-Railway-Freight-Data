@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.easyeat.mapper.UserMapper">
+	<!-- 作为CustomerMapper接口的映射 -->
+	<!-- 查询 -->
+	<select id="selectAllUser" parameterType="org.easyeat.entity.User"
+		resultType="org.easyeat.entity.User">
+		select CusID,CusPhoneNum,CallCus,CusGender,CusName,CusIcon,CusPWD,CusPWDforPay
+		from customer
+	</select>
+	<!-- 根据ID查询 -->
+	<select id="selectUserbyID" parameterType="org.easyeat.entity.User"
+		resultType="org.easyeat.entity.User">
+		select CusID,CusPhoneNum,CallCus,CusGender,CusName,CusIcon,CusPWD,CusPWDforPay
+		from customer
+		where CusID = #{id}
+	</select>
+	<!-- 删除 -->
+	<delete id="deleteUserbyID" parameterType="org.easyeat.entity.User">
+		delete
+		from customer
+		where CusID = #{id}
+	</delete>
+
+</mapper>
