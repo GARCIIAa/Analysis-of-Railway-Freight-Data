@@ -28,7 +28,6 @@ CREATE TABLE `business` (
   `BusinessID` varchar(15) NOT NULL,
   `BusiLogo` varchar(100) DEFAULT NULL,
   `BusiName` varchar(20) DEFAULT NULL,
-  `Password` varchar(20) DEFAULT NULL,
   `BusiDesc` varchar(100) DEFAULT NULL,
   `Address` varchar(100) DEFAULT NULL,
   `Phone` varchar(25) DEFAULT NULL,
@@ -49,6 +48,7 @@ CREATE TABLE `business` (
 
 LOCK TABLES `business` WRITE;
 /*!40000 ALTER TABLE `business` DISABLE KEYS */;
+INSERT INTO `business` VALUES ('888888','desktop','youyou奶茶','专注奶茶30年','海淀区北交大南门','15198132915','desktop','desktop','5','1600','10-6','1','1');
 /*!40000 ALTER TABLE `business` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +106,7 @@ CREATE TABLE `cusorder` (
 
 LOCK TABLES `cusorder` WRITE;
 /*!40000 ALTER TABLE `cusorder` DISABLE KEYS */;
-INSERT INTO `cusorder` VALUES ('66666','0','2018/3/23 12:30','2','299','1','15198132915','YOU','M','123','2018/3/23 11:57','NO','123','1'),('77777','0','2018/3/23 12:00','1','100','0','15198132915','YOU','M','123','2018/3/23 11:44','NO','123','1');
+INSERT INTO `cusorder` VALUES ('66666','0','2018/3/23 12:30','2','299','1','15198132915','YOU','M','123','2018/3/23 11:57','NO','888888','1'),('77777','0','2018/3/23 12:00','1','100','0','15198132915','YOU','M','123','2018/3/23 11:44','NO','888888','1');
 /*!40000 ALTER TABLE `cusorder` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,10 +151,10 @@ CREATE TABLE `dishes` (
   `DishID` varchar(20) NOT NULL,
   `DishLogo` varchar(100) DEFAULT NULL,
   `DishName` varchar(50) DEFAULT NULL,
-  `DishPrice` float DEFAULT NULL,
+  `DishPrice` varchar(10) DEFAULT NULL,
   `TimeToGetDone` varchar(10) DEFAULT NULL,
   `DishDesc` varchar(100) DEFAULT NULL,
-  `SoldTimes` int(11) DEFAULT NULL,
+  `SoldTimes` varchar(10) DEFAULT NULL,
   `TypeID` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`DishID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -166,6 +166,7 @@ CREATE TABLE `dishes` (
 
 LOCK TABLES `dishes` WRITE;
 /*!40000 ALTER TABLE `dishes` DISABLE KEYS */;
+INSERT INTO `dishes` VALUES ('1','desktop','麻婆豆腐','10','5mins','好吃','17','123456'),('2','desktop','冷吃兔','20','10mins','很好吃','26','123456'),('3','desktop','意面','16','5mins','贼好吃','29','456789');
 /*!40000 ALTER TABLE `dishes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,6 +191,7 @@ CREATE TABLE `dishtype` (
 
 LOCK TABLES `dishtype` WRITE;
 /*!40000 ALTER TABLE `dishtype` DISABLE KEYS */;
+INSERT INTO `dishtype` VALUES ('123456','正宗川菜','888888'),('456789','西式美食','888888');
 /*!40000 ALTER TABLE `dishtype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,6 +214,7 @@ CREATE TABLE `dishtypecontent` (
 
 LOCK TABLES `dishtypecontent` WRITE;
 /*!40000 ALTER TABLE `dishtypecontent` DISABLE KEYS */;
+INSERT INTO `dishtypecontent` VALUES ('1','123456'),('2','123456'),('3','456789');
 /*!40000 ALTER TABLE `dishtypecontent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,29 +271,6 @@ LOCK TABLES `favorsituation` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `income`
---
-
-DROP TABLE IF EXISTS `income`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `income` (
-  `Date` datetime DEFAULT NULL,
-  `Income` varchar(20) DEFAULT NULL,
-  `BussinessID` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `income`
---
-
-LOCK TABLES `income` WRITE;
-/*!40000 ALTER TABLE `income` DISABLE KEYS */;
-/*!40000 ALTER TABLE `income` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `ordercontent`
 --
 
@@ -300,7 +280,7 @@ DROP TABLE IF EXISTS `ordercontent`;
 CREATE TABLE `ordercontent` (
   `OrderID` varchar(20) DEFAULT NULL,
   `DishID` varchar(20) DEFAULT NULL,
-  `Count` int(11) DEFAULT NULL
+  `Count` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -310,6 +290,7 @@ CREATE TABLE `ordercontent` (
 
 LOCK TABLES `ordercontent` WRITE;
 /*!40000 ALTER TABLE `ordercontent` DISABLE KEYS */;
+INSERT INTO `ordercontent` VALUES ('66666','1','1'),('66666','2','1'),('77777','3','1');
 /*!40000 ALTER TABLE `ordercontent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -330,4 +311,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-23 11:58:31
+-- Dump completed on 2018-03-24  1:40:06
