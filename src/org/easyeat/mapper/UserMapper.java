@@ -6,6 +6,6 @@ import org.easyeat.entity.User;
 
 public interface UserMapper {
 	List<User> selectAllUser();
-	User selectUserbyID(int id);
-	void deleteUserbyID(int id);
+	User selectUserbyID(String id);
+	void deleteUserbyID(String id);
 }

@@ -2,6 +2,7 @@ package org.easyeat.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 
@@ -24,20 +25,19 @@ public class CusOrderService {
 	public int deleteCusOrderbyId(String id){
 		return cusorderMapper.deleteCusOrderById(id);
 	}
-	/*public int createCusOrder(Date orderTime, float totalPrice, int userId,
-								  int logisticProviderId, int status, String logisticInfo){
-		CusOrder cusOrder = new CusOrder(0,orderTime, totalPrice, userId,
-				logisticProviderId, status, logisticInfo);
+	public String createCusOrder(CusOrder o){
+		String oid = UUID.randomUUID().toString().trim().replaceAll("-", "");
+		CusOrder cusOrder = new CusOrder(oid,o.getFinish(),o.getReservetime(),o.getCustomernum(),o.getPrice(),o.getReady(),o.getPhone(),o.getSirormiss(),o.getSex(),o.getCusid(),o.getOrdertime(),o.getPs(),o.getSellerid(),o.getIspaid());
 		cusorderMapper.insertOneCusOrder(cusOrder);
-		return cusOrder.getId();
-	}*/
+		return oid;
+	}
 	public int updateStatusById(CusOrder cusOrder){
 		return cusorderMapper.updateStatus(cusOrder);
 	}
 	public int updateTotalPriceById(String id,String price){
 		return cusorderMapper.updateTotalPrice(id,price);
 	}
-	public List<CusOrder> getOrderInfoByCusId(int cusId){
+	public List<CusOrder> getOrderInfoByCusId(String cusId){
 		return cusorderMapper.selectCusOrderByCusId(cusId);
 	}
 }

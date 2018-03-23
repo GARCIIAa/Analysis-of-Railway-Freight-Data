@@ -3,14 +3,18 @@ package org.easyeat.entity;
 public class Dish {
 	private String id;
 	private String logo;
-	private float price;
+	private String name;
+	private String price;
 	private String timetodo;
 	private String desc;
-	private int soldtimes;// 本月被点次数
+	private String soldtimes;// 本月被点次数
 	private String typeId;// 所属商家的哪个类型
-	public Dish(String id, String logo, float price, String timetodo, String desc, int soldtimes, String typeId) {
+	private String orderCounts;
+	private String totalPrice;
+	public Dish(String id, String logo, String name, String price, String timetodo, String desc, String soldtimes, String typeId) {
 		this.id = id;
 		this.logo = logo;
+		this.setName(name);
 		this.price = price;
 		this.timetodo = timetodo;
 		this.desc = desc;
@@ -29,10 +33,10 @@ public class Dish {
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
-	public float getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	public String getTimetodo() {
@@ -47,10 +51,10 @@ public class Dish {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public int getSoldtimes() {
+	public String getSoldtimes() {
 		return soldtimes;
 	}
-	public void setSoldtimes(int soldtimes) {
+	public void setSoldtimes(String soldtimes) {
 		this.soldtimes = soldtimes;
 	}
 	public String getTypeId() {
@@ -59,4 +63,23 @@ public class Dish {
 	public void setTypeId(String typeId) {
 		this.typeId = typeId;
 	}
+	public String getOrderCounts() {
+		return orderCounts;
+	}
+	public void setOrderCounts(String orderCounts) {
+		this.orderCounts = orderCounts;
+	}
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 }

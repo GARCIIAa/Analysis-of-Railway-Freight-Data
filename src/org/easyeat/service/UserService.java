@@ -16,11 +16,11 @@ public class UserService {
 	{
 		return userMapper.selectAllUser();
 	}
-	public User querryCustomersbyID(int id)
+	public User querryCustomersbyID(String id)
 	{
 		return userMapper.selectUserbyID(id);
 	}
-	public void deleteCustomerbyID(int id){
+	public void deleteCustomerbyID(String id){
 		userMapper.deleteUserbyID(id);
 	}
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.easyeat.mapper.SellerMapper">
+	<!-- 作为CustomerMapper接口的映射 -->
+	<!-- 查询 -->
+	<select id="selectAllSeller" parameterType="org.easyeat.entity.Seller"
+		resultType="org.easyeat.entity.Seller">
+		select BusinessID,BusiLogo,BusiName,BusiDesc,Address,Phone,Aptitude,Circumstance,EvaluLevel,KeptTimes,periodOfBusi,IsOnBuss,IsFull
+		from business
+	</select>
+	<!-- 根据ID查询 -->
+	<select id="selectSellerbyID" parameterType="org.easyeat.entity.Seller"
+		resultType="org.easyeat.entity.Seller">
+		select BusinessID,BusiLogo,BusiName,BusiDesc,Address,Phone,Aptitude,Circumstance,EvaluLevel,KeptTimes,periodOfBusi,IsOnBuss,IsFull
+		from business
+		where BusinessID = #{id}
+	</select>
+	<!-- 根据ID查询名称 -->
+	<select id="selectSellerNamebyID" resultType = "String">
+		select BusiName
+		from business
+		where BusinessID = #{id}
+	</select>
+</mapper>

@@ -9,6 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -38,7 +39,7 @@ public class UserResource {
 	@GET
 	@Path("/{id}")
 	@Produces("application/json")
-	public Response getCustomerbyID(@PathParam("id")int id) throws UnsupportedEncodingException
+	public Response getCustomerbyID(@PathParam("id")String id) throws UnsupportedEncodingException
 	{
 		User user = userService.querryCustomersbyID(id);
 		CacheControl cacheControl =  new CacheControl();
@@ -52,9 +53,22 @@ public class UserResource {
 	@DELETE
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public void deleteCustomer(@PathParam("id")int id) throws UnsupportedEncodingException
+	public void deleteCustomer(@PathParam("id")String id) throws UnsupportedEncodingException
 	{
-		System.out.println(id);
 		userService.deleteCustomerbyID(id);
 	}
+	/*@GET
+	@Path("/pic")
+	@Produces("application/json")
+	public Response getCusPicbyID(@QueryParam("id")String id) throws UnsupportedEncodingException
+	{
+		String user = userService.querryCustomersbyID(id);
+		CacheControl cacheControl =  new CacheControl();
+		cacheControl.setMaxAge(86400);
+		cacheControl.setPrivate(true);                                 
+
+		Response.ResponseBuilder builder = Response.ok(user);
+		builder.cacheControl(cacheControl);
+		return builder.build();
+	}*/
 }

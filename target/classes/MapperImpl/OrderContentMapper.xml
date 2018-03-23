@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.easyeat.mapper.OrderContentMapper">
+	<!-- 作为OrderContentMapper接口的映射 -->
+	<!--插入一条记录-->
+	<insert id="insertOneOrderContent" parameterType="org.easyeat.entity.OrderContent">
+		insert into ordercontent(OrderID,DishID,Count)
+		VALUES (#{OrderID},#{DishID},#{Count})
+	</insert>
+	<!--通过订单号查询所有的产品-->
+	<select id="selectOrderContentbyOrderId" resultType="org.easyeat.entity.OrderContent">
+		select OrderID,DishID,Count
+		from ordercontent
+		where OrderID=#{OrderID}
+	</select>
+</mapper>

@@ -22,7 +22,7 @@
 		where OrderID = #{OrderID}
 	</delete>
 	<!--插入一条客户订单信息-->
-	<insert id="insertOneCusOrder" parameterType="org.easyeat.entity.CusOrder" useGeneratedKeys="true" keyProperty="id">
+	<insert id="insertOneCusOrder" parameterType="org.easyeat.entity.CusOrder">
 		insert into cusorder(OrderID,Finished,ReserveTime,CustomNum,OrderPrice,DishReady,CusPhoneNum,CallCus,CusGender,CusID,OrderTime,PS,BussinessID,isPaid)
 		VALUES (#{OrderID},#{Finished},#{ReserveTime},#{CustomNum},#{OrderPrice},#{DishReady},#{CusPhoneNum},#{CallCus},#{CusGender},#{CusID},#{OrderTime},#{PS},#{BussinessID},#{isPaid})
 	</insert>

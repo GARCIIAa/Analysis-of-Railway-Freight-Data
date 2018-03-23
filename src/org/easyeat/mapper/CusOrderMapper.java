@@ -9,8 +9,8 @@ public interface CusOrderMapper {
 	List<CusOrder> selectAllCusOrder();
 	CusOrder selectCusOrderById(String OrderID);
 	Integer deleteCusOrderById(String OrderID);
-	Integer insertOneCusOrder(CusOrder cusOrder);
+	void insertOneCusOrder(CusOrder cusOrder);
 	Integer updateStatus(CusOrder cusOrder);
-	List<CusOrder> selectCusOrderByCusId(int CusID);
+	List<CusOrder> selectCusOrderByCusId(String cusId);
 	Integer updateTotalPrice(@Param("OrderID") String id,@Param("OrderPrice") String price);
 }

@@ -15,6 +15,8 @@ public class CusOrder {
 	private String ps;// 备注
 	private String sellerid;
 	private String ispaid;
+	private String resname;
+	private String dishcount;
 	public CusOrder(String id, String finish, String reservetime, String customernum, String price, String ready,String phone,
 			String sirormiss, String sex, String cusid, String ordertime, String ps, String sellerid, String ispaid) {
 		this.id = id;
@@ -32,19 +34,13 @@ public class CusOrder {
 		this.sellerid = sellerid;
 		this.ispaid = ispaid;
 	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String isFinish() {
+	public String getFinish() {
 		return finish;
 	}
 	public void setFinish(String finish) {
@@ -68,11 +64,17 @@ public class CusOrder {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public String isReady() {
+	public String getReady() {
 		return ready;
 	}
 	public void setReady(String ready) {
 		this.ready = ready;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public String getSirormiss() {
 		return sirormiss;
@@ -110,10 +112,23 @@ public class CusOrder {
 	public void setSellerid(String sellerid) {
 		this.sellerid = sellerid;
 	}
-	public String isIspaid() {
+	public String getIspaid() {
 		return ispaid;
 	}
 	public void setIspaid(String ispaid) {
 		this.ispaid = ispaid;
 	}
+	public String getResname() {
+		return resname;
+	}
+	public void setResname(String resname) {
+		this.resname = resname;
+	}
+	public String getDishcount() {
+		return dishcount;
+	}
+	public void setDishcount(String dishcount) {
+		this.dishcount = dishcount;
+	}
+	
 }
