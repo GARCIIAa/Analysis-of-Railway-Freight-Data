@@ -75,6 +75,42 @@ LOCK TABLES `collect` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `cusorder`
+--
+
+DROP TABLE IF EXISTS `cusorder`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cusorder` (
+  `OrderID` varchar(15) NOT NULL,
+  `Finished` varchar(10) DEFAULT NULL,
+  `ReserveTime` varchar(20) DEFAULT NULL,
+  `CustomNum` varchar(10) DEFAULT NULL,
+  `OrderPrice` varchar(10) DEFAULT NULL,
+  `DishReady` varchar(10) DEFAULT NULL,
+  `CusPhoneNum` varchar(20) DEFAULT NULL,
+  `CallCus` varchar(20) DEFAULT NULL,
+  `CusGender` varchar(5) DEFAULT NULL,
+  `CusID` varchar(20) DEFAULT NULL,
+  `OrderTime` varchar(20) DEFAULT NULL,
+  `PS` varchar(100) DEFAULT NULL,
+  `BussinessID` varchar(20) DEFAULT NULL,
+  `isPaid` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`OrderID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cusorder`
+--
+
+LOCK TABLES `cusorder` WRITE;
+/*!40000 ALTER TABLE `cusorder` DISABLE KEYS */;
+INSERT INTO `cusorder` VALUES ('77777','0','2018/3/23 12:00','1','100','0','15198132915','YOU','M','123','2018/3/23 11:44','NO','123','1');
+/*!40000 ALTER TABLE `cusorder` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customer`
 --
 
@@ -255,41 +291,6 @@ LOCK TABLES `income` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `order`
---
-
-DROP TABLE IF EXISTS `order`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `order` (
-  `OrderID` varchar(15) NOT NULL,
-  `Finished` varchar(10) DEFAULT NULL,
-  `ReserveTime` varchar(20) DEFAULT NULL,
-  `CustomNum` varchar(10) DEFAULT NULL,
-  `OrderPrice` varchar(10) DEFAULT NULL,
-  `DishReady` varchar(10) DEFAULT NULL,
-  `CusPhoneNum` varchar(20) DEFAULT NULL,
-  `CallCus` varchar(20) DEFAULT NULL,
-  `CusGender` varchar(5) DEFAULT NULL,
-  `CusID` varchar(20) DEFAULT NULL,
-  `OrderTime` varchar(20) DEFAULT NULL,
-  `PS` varchar(100) DEFAULT NULL,
-  `BussinessID` varchar(20) DEFAULT NULL,
-  `isPaid` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`OrderID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `order`
---
-
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `ordercontent`
 --
 
@@ -329,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-18 15:59:35
+-- Dump completed on 2018-03-23 11:53:25

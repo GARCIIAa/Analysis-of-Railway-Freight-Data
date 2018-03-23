@@ -1,21 +1,21 @@
 package org.easyeat.entity;
 
-public class Order {
+public class CusOrder {
 	private String id;
 	private String finish;
-	private String reservetime;// �û�Ԥ����ʳʱ��
-	private String customernum;// ������Ԥ�����Ͳ͵�����
+	private String reservetime;// 用户预定堂食时间
+	private String customernum;// 订单中预定来就餐的人数
 	private String price;
-	private String ready;// �����еĲ�Ʒ�Ƿ�׼�����
+	private String ready;// 订单中的菜品是否准备完成
 	private String phone;
 	private String sirormiss;
 	private String sex;
 	private String cusid;
 	private String ordertime;
-	private String ps;// ��ע
+	private String ps;// 备注
 	private String sellerid;
 	private String ispaid;
-	public Order(String id, String finish, String reservetime, String customernum, String price, String ready,String phone,
+	public CusOrder(String id, String finish, String reservetime, String customernum, String price, String ready,String phone,
 			String sirormiss, String sex, String cusid, String ordertime, String ps, String sellerid, String ispaid) {
 		this.id = id;
 		this.finish = finish;

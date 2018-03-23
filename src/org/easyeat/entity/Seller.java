@@ -1,7 +1,6 @@
 package org.easyeat.entity;
 
 public class Seller {
-	
 	private String id;
 	private String logo;
 	private String name;
@@ -9,13 +8,13 @@ public class Seller {
 	private String desc;
 	private String address;
 	private String tel;
-	private String aptitude;// �̼����ʣ���Ӫҵִ�յ���Ʒ����ƬUrl��ַ
-	private String circumstance;// �̼һ��������̼һ�����Ƭ��Url��ַ
-	private String level;// �����Ǽ���ƽ��ֵ��һλС��
-	private String keeptime;// ���˿��ղصĴ���
-	private String period;// Ӫҵʱ������
-	private String open;// �Ƿ���Ӫҵ
-	private String full;// �Ƿ����
+	private String aptitude;// 商家资质，即营业执照等物品的照片Url地址
+	private String circumstance;// 商家环境，即商家环境照片的Url地址
+	private String level;// 评价星级的平均值，一位小数
+	private String keeptime;// 被顾客收藏的次数
+	private String period;// 营业时段描述
+	private String open;// 是否在营业
+	private String full;// 是否客满
 
 	public Seller(String id, String logo, String name, String password, String desc, String address, String tel,
 			String aptitude, String circumstance, String level, String keeptime, String period, String open,

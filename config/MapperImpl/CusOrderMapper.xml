@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.easyeat.mapper.CusOrderMapper">
+	<!-- 作为CusOrderMapper接口的映射 -->
+	<!-- 查询 -->
+	<select id="selectAllCusOrder" parameterType="org.easyeat.entity.CusOrder"
+		resultType="org.easyeat.entity.CusOrder">
+		select OrderID,Finished,ReserveTime,CustomNum,OrderPrice,DishReady,CusPhoneNum,CallCus,CusGender,CusID,OrderTime,PS,BussinessID,isPaid
+		from cusorder
+	</select>
+	<!-- 根据ID查询 -->
+	<select id="selectCusOrderById" parameterType="org.easyeat.entity.CusOrder"
+		resultType="org.easyeat.entity.CusOrder">
+		select OrderID,Finished,ReserveTime,CustomNum,OrderPrice,DishReady,CusPhoneNum,CallCus,CusGender,CusID,OrderTime,PS,BussinessID,isPaid
+		from cusorder
+		where OrderID = #{OrderID}
+	</select>
+	<!-- 删除 -->
+	<delete id="deleteCusOrderById" parameterType="org.easyeat.entity.CusOrder">
+		delete
+		from cusorder
+		where OrderID = #{OrderID}
+	</delete>
+	<!--插入一条客户订单信息-->
+	<insert id="insertOneCusOrder" parameterType="org.easyeat.entity.CusOrder" useGeneratedKeys="true" keyProperty="id">
+		insert into cusorder(OrderID,Finished,ReserveTime,CustomNum,OrderPrice,DishReady,CusPhoneNum,CallCus,CusGender,CusID,OrderTime,PS,BussinessID,isPaid)
+		VALUES (#{OrderID},#{Finished},#{ReserveTime},#{CustomNum},#{OrderPrice},#{DishReady},#{CusPhoneNum},#{CallCus},#{CusGender},#{CusID},#{OrderTime},#{PS},#{BussinessID},#{isPaid})
+	</insert>
+	<!--更新Status字段-->
+	<update id="updateStatus" parameterType="org.easyeat.entity.CusOrder">
+		UPDATE cusorder SET Finished=#{Finished}
+		WHERE OrderID=#{OrderID}
+	</update>
+	<!--更新totalPrice字段-->
+	<update id="updateTotalPrice">
+		UPDATE cusorder SET OrderPrice=#{OrderPrice}
+		WHERE OrderID=#{OrderID}
+	</update>
+	<!--查询相同客户的所有订单信息-->
+    <select id="selectCusOrderByCusId"  resultType="org.easyeat.entity.CusOrder">
+        select OrderID,Finished,ReserveTime,CustomNum,OrderPrice,DishReady,CusPhoneNum,CallCus,CusGender,CusID,OrderTime,PS,BussinessID,isPaid
+		from cusorder
+		WHERE CusID=#{CusID}
+	</select>
+</mapper>

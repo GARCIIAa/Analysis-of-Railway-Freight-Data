@@ -6,8 +6,8 @@ public class Dish {
 	private float price;
 	private String timetodo;
 	private String desc;
-	private int soldtimes;// ���±������
-	private String typeId;// �����̼ҵ��ĸ�����
+	private int soldtimes;// 本月被点次数
+	private String typeId;// 所属商家的哪个类型
 	public Dish(String id, String logo, float price, String timetodo, String desc, int soldtimes, String typeId) {
 		this.id = id;
 		this.logo = logo;

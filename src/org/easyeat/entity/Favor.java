@@ -2,8 +2,8 @@ package org.easyeat.entity;
 
 public class Favor {
 	private String id;
-	private int satisfy;// �����ġ�����
-	private int sirormiss;// �����ļ�
+	private int satisfy;// 满减的“满”
+	private int sirormiss;// 满减的减
 	private String sellerid;
 	public Favor(String id, int satisfy, int sirormiss, String sellerid) {
 		super();
